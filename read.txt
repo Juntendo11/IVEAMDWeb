@@ -1,0 +1,7 @@
+Create medieval themed website showcasing the VR/XR Age-related macular degeneration simulation.
+Use fonts like Helvetica.
+The website mainly show cases Charles Bonnet Syndrome, with image of simulation and his portrait, but also tunnel vision and blind spot.
+Footer must be present for copyright.
+Website must have Animation and interactable.
+
+Download link: https://sidequestvr.com/app/54533/amdsimulation
