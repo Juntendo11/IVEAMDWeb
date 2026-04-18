@@ -1,0 +1,425 @@
+/* ==========================================================================
+   CSS Variables for Theming (1700s Medieval/Gothic Vibe)
+   ========================================================================== */
+:root {
+    --bg-dark: #070605;
+    --bg-darker: #040302;
+    --parchment: #eaddc5;
+    --parchment-dim: #bdae93;
+    --gold: #d4af37;
+    --gold-dim: #9c7b16;
+    --blood-red: #5e0d0d;
+    --font-heading: 'Cinzel', serif;
+    --font-body: 'Playfair Display', serif;
+    --transition-slow: 0.8s ease-in-out;
+    --transition-medium: 0.4s ease;
+}
+
+/* ==========================================================================
+   Base Reset and Typography
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--parchment-dim);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+    font-size: 18px;
+    cursor: default;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--parchment);
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--gold);
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--parchment);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==========================================================================
+   Global Effects
+   ========================================================================== */
+/* The dark vignette borders around the entire window */
+.vignette-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    box-shadow: inset 0 0 150px rgba(0, 0, 0, 0.95), inset 0 0 40px rgba(0, 0, 0, 0.8);
+    z-index: 100;
+}
+
+/* Candlelight ambient cursor effect */
+#candlelight {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 600px;
+    height: 600px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, rgba(212, 175, 55, 0.02) 40%, rgba(0,0,0,0) 70%);
+    pointer-events: none;
+    z-index: 99;
+    mix-blend-mode: color-dodge;
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+
+/* Scroll Fade-in Utilities */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Dividers */
+.divider {
+    width: 120px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    margin: 30px auto;
+}
+
+.divider-small {
+    width: 60px;
+    height: 1px;
+    background: var(--gold-dim);
+    margin: 15px auto;
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 20px;
+    /* Subtle noise/texture background combined with dark gradient */
+    background: radial-gradient(circle at center, #1a1614 0%, var(--bg-darker) 100%);
+}
+
+.hero-content {
+    max-width: 800px;
+    position: relative;
+    z-index: 2;
+}
+
+.gothic-title {
+    font-size: 4.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.3), 0 5px 15px rgba(0,0,0,1);
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--parchment);
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+}
+
+/* Button */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 30px;
+    border: 1px solid var(--gold-dim);
+    background-color: rgba(20, 16, 12, 0.6);
+    color: var(--gold);
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition-medium);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.btn:hover {
+    background-color: var(--gold-dim);
+    color: var(--bg-darker);
+    border-color: var(--gold);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+.btn-icon {
+    height: 24px;
+    margin-right: 12px;
+    filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(5deg);
+}
+
+.btn:hover .btn-icon {
+    filter: brightness(0);
+}
+
+/* ==========================================================================
+   Sections Layout
+   ========================================================================== */
+.section {
+    padding: 100px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 60px;
+    color: var(--gold);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+/* Split Layout for Charles Bonnet */
+.split-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    align-items: center;
+}
+
+.text-column {
+    flex: 1;
+    min-width: 300px;
+    font-size: 1.15rem;
+}
+
+.text-column p {
+    margin-bottom: 25px;
+}
+
+.text-column strong {
+    color: var(--gold);
+    font-weight: normal;
+}
+
+.instruction-text {
+    font-style: italic;
+    color: var(--gold-dim);
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+/* Hover Reveal Image Container */
+.image-column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.image-reveal-container {
+    position: relative;
+    border: 3px solid #2a231c;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+    cursor: none; /* Cursor changes via JS, but conceptually interacting is key */
+}
+
+.image-reveal-container::before {
+    content: '';
+    display: block;
+    padding-top: 100%; /* 1:1 aspect ratio assumed for portraits generally, adjustments possible */
+}
+
+.base-image, .reveal-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity var(--transition-slow);
+}
+
+.base-image {
+    filter: sepia(0.6) contrast(1.2) brightness(0.7);
+    z-index: 2;
+}
+
+.reveal-image {
+    z-index: 1;
+}
+
+.image-reveal-container:hover .base-image {
+    opacity: 0;
+}
+
+/* ==========================================================================
+   Cards Container (Tunnel Vision / Blind Spot)
+   ========================================================================== */
+.centered-text {
+    text-align: center;
+    margin-bottom: 50px;
+    font-style: italic;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.gothic-card {
+    background: #110e0b;
+    border: 1px solid #2a231c;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: var(--transition-medium);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    position: relative;
+}
+
+.gothic-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--gold-dim);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.8), 0 0 15px rgba(212, 175, 55, 0.1);
+}
+
+.card-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(0.3) brightness(0.8);
+    transition: var(--transition-medium);
+}
+
+.gothic-card:hover .card-image img {
+    filter: sepia(0) brightness(1.1) contrast(1.1);
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 30px;
+    text-align: center;
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+}
+
+/* ==========================================================================
+   Video/Trailer Section
+   ========================================================================== */
+.trailer-section {
+    text-align: center;
+}
+
+.video-container {
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    border: 2px solid var(--gold-dim);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.9);
+    background: #000;
+}
+
+.video-container video {
+    width: 100%;
+    display: block;
+}
+
+.supported-hardware {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    opacity: 0.7;
+}
+
+.hardware-icon {
+    width: 60px;
+    filter: sepia(1) hue-rotate(5deg) brightness(0.8);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.site-footer {
+    background-color: var(--bg-darker);
+    border-top: 1px solid #1a1614;
+    padding: 60px 20px 30px;
+    text-align: center;
+    position: relative;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.uni-logo {
+    height: 80px;
+    filter: opacity(0.6) grayscale(1) sepia(0.5);
+    transition: filter 0.3s ease;
+}
+
+.uni-logo:hover {
+    filter: opacity(1) grayscale(0) sepia(0);
+}
+
+.copyright {
+    font-size: 0.85rem;
+    color: #888;
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+@media (max-width: 768px) {
+    .gothic-title {
+        font-size: 3rem;
+    }
+    .section-title {
+        font-size: 2.2rem;
+    }
+    .split-layout {
+        flex-direction: column;
+    }
+    .hero {
+        padding-top: 100px;
+    }
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore a mysterious, immersive VR/XR simulation of Age-related Macular Degeneration (AMD) and Charles Bonnet Syndrome.">
+    <title>Visions of the Void - AMD VR Simulation</title>
+    <!-- Google Fonts for 1700s/Medieval Vibe -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Candlelight tracking element for JavaScript -->
+    <div id="candlelight"></div>
+
+    <!-- Vignette overlay for historic feel -->
+    <div class="vignette-overlay"></div>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero fade-in">
+            <div class="hero-content">
+                <h1 class="gothic-title">Visions of the Void</h1>
+                <p class="subtitle">A Journey into the Phantoms of the Mind</p>
+                <div class="divider"></div>
+                <p class="intro-text">
+                    Experience the silent affliction of Age-Related Macular Degeneration.<br>
+                    Discover the phenomenon of Charles Bonnet Syndrome in immersive VR.
+                </p>
+                <div class="action-container">
+                    <a href="https://sidequestvr.com/app/54533/amdsimulation" target="_blank" rel="noopener noreferrer" class="btn gothic-btn">
+                        <img src="sidequestLogo.png" alt="SideQuest Logo" class="btn-icon"> Download on SideQuest
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHARLES BONNET SYNDROME SECTION -->
+        <section class="section enigmatic-section fade-in">
+            <h2 class="section-title">The Enigma of Charles Bonnet</h2>
+            <div class="split-layout">
+                <div class="text-column">
+                    <p>
+                        In the twilight of his life in the late 1700s, natural philosopher <strong>Charles Bonnet</strong> documented a curious condition plaguing his grandfather. Despite being nearly blind from cataracts, his grandfather would see vivid, silent apparitions: figures, patterns, and strange landscapes painting themselves upon the void of his fading vision.
+                    </p>
+                    <p>
+                        This is the mystery of <em>Charles Bonnet Syndrome</em>. As the eye's sight wanes through conditions like Age-related Macular Degeneration (AMD), the brain desperately fills the darkness with its own conjurations.
+                    </p>
+                    <p class="instruction-text">Hover over the portrait to reveal the phantoms.</p>
+                </div>
+                <div class="image-column">
+                    <div class="image-reveal-container">
+                        <img src="CharlesBonnetPortrait.PNG" alt="Portrait of Charles Bonnet" class="base-image">
+                        <img src="CharlesBonnetSyndrome.webp" alt="Charles Bonnet Syndrome Visual Hallucination" class="reveal-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OTHER AMD SIMULATIONS -->
+        <section class="section conditions-section fade-in">
+            <h2 class="section-title">The Veil of the Eye</h2>
+            <p class="centered-text">Other visual afflictions simulated within the experience.</p>
+            <div class="cards-grid">
+                <!-- Tunnel Vision -->
+                <div class="gothic-card fade-in">
+                    <div class="card-image">
+                        <img src="tunnelVision.jpg" alt="Tunnel Vision Simulation">
+                    </div>
+                    <div class="card-content">
+                        <h3>Tunnel Vision</h3>
+                        <div class="divider-small"></div>
+                        <p>The gentle creeping of shadows from the periphery, leaving only a narrow pinhole of the waking world remaining.</p>
+                    </div>
+                </div>
+                <!-- Blind Spot -->
+                <div class="gothic-card fade-in">
+                    <div class="card-image">
+                        <img src="BlindSpot.jpg" alt="Blind Spot Simulation">
+                    </div>
+                    <div class="card-content">
+                        <h3>The Scotoma</h3>
+                        <div class="divider-small"></div>
+                        <p>A dark, impenetrable blotch anchored in the center of one's gaze—a literal blind spot masking the faces of loved ones.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRAILER SECTION -->
+        <section class="section trailer-section fade-in">
+            <h2 class="section-title">The Artifact</h2>
+            <div class="video-container">
+                <video controls preload="metadata" poster="quest3.webp">
+                    <source src="Trailercomp.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="supported-hardware">
+                <img src="quest3.webp" alt="Meta Quest 3 Support" title="Supported on Meta Quest" class="hardware-icon">
+                <p>Designed for XR & VR Headsets</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-content fade-in">
+            <div class="logos">
+                <img src="Adelaide Uni logo.png" alt="University of Adelaide Logo" class="uni-logo">
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 VR/XR Age-Related Macular Degeneration Simulation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
